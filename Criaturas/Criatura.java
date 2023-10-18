@@ -13,11 +13,13 @@ public class Criatura {
     private int defesa;
     private int velocidade;
     private double ataqueElemental;
+    private String tipoCriatura;
 
 
 
-    public Criatura(String nomeCriatura ) {
+    public Criatura(String nomeCriatura, String tipoCriatura ) {
         this.nomeCriatura = nomeCriatura;
+        this.tipoCriatura = tipoCriatura;
        
 
        
@@ -48,21 +50,31 @@ public class Criatura {
 
     // Getters and Setters
 
-    public String getNomeCriatura() {
-        return nomeCriatura;
-    }
-
+    
 
     public double getAtaqueElemental() {
         return ataqueElemental;
     }
 
+    public String getNomeCriatura() {
+        return nomeCriatura;
+    }
+
+    public void setNomeCriatura(String nomeCriatura) {
+        this.nomeCriatura = nomeCriatura;
+    }
+
+    public String getTipoCriatura() {
+        return tipoCriatura;
+    }
+
+    public void setTipoCriatura(String tipoCriatura) {
+        this.tipoCriatura = tipoCriatura;
+    }
+
     public void setAtaqueElemental(double ataqueElemental) {
         this.ataqueElemental = ataqueElemental;
     }
-
-
-
 
 
     public int getVida() {
