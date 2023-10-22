@@ -1,25 +1,52 @@
-public class StoneDev extends Criatura {
-  
-    public StoneDev(String nomeCriatura, String tipoCriatura) {
-        this.setNomeCriatura(getNomeCriatura());
-        this.setTipoCriatura(getTipoCriatura());
+import java.util.Random;
+public class StoneDev extends Criatura{
+
+    private Random aleatorio = new Random();
+
+    public StoneDev(String nomeCriatura, String tipoCriatura ) {
+
+        super(nomeCriatura, tipoCriatura);
+        
+
+        setVida(aleatorio.nextInt((400-200) + 1) + 200);
+        setPoder(aleatorio.nextInt((30 - 10) + 1) + 10);
+        setAtaque(aleatorio.nextInt((15 - 5) + 1) + 5);
+        setDefesa(aleatorio.nextInt((15 - 5) + 1) + 5);
+        setVelocidade(aleatorio.nextInt((10 - 1) + 1) + 1);
+        
+    }
+
+
+    @Override
+
+    public void ataqueElemental(Criatura inimigo){
+
+
+        if (inimigo.getNomeCriatura().equals("StoneDev")) {
+            int dano = (int) ((getPoder() * getAtaque()) / (inimigo.getDefesa() * 0.5));
+            inimigo.receberDano(dano);
+            
+        } else if (inimigo.getNomeCriatura().equals("WaveNerd")) {
+            int dano = ((getPoder() * getAtaque()) / (inimigo.getDefesa() * 2));
+            inimigo.receberDano(dano);
+            
+
+        } else if (inimigo.getNomeCriatura().equals("BurnCoder")) {
+            int dano = ((getPoder() * getAtaque()) / (inimigo.getDefesa() * 1));
+            inimigo.receberDano(dano);
+            
+
+        } else if (inimigo.getNomeCriatura().equals("BreezeHacker")) {
+            int dano =  ((getPoder() * getAtaque()) / (inimigo.getDefesa() * 1));
+            inimigo.receberDano(dano);
+            
+        }
+
+        
     }
     
-  @Override
-  public void ataqueElemental(Criatura oponente) {
-      System.out.println("Ataque elementar!");
-  }
-  @Override
-  public void ataqueNormal(Criatura oponente){
-    int dano = getPoder() * getAtaque() / oponente.getDefesa();
-    int vidaAtual = oponente.getVida() - dano;
-    oponente.setVida(vidaAtual);
-}
-  @Override
-  public String toString() {
-      return getNomeCriatura() +
-              "poder=" + getPoder() + ", ataque=" + getAtaque() +
-              ", defesa=" + getDefesa() + ", velocidade=" + getVelocidade() +
-              ", pontosVida=" + getVida();
-  }
+
+    
+
+    
 }
