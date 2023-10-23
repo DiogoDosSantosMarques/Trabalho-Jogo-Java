@@ -109,7 +109,9 @@ public void ataqueFisico(Criatura rival){
     public void ataqueElemental(Criatura inimigo){
         
         
-    }    
+    }
+
+
     
     
     
