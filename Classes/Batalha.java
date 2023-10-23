@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Batalha extends Torneio {
+public class Batalha {
     private Menu ataqueMenu = new MenuAtaque();
     private Menu menuProximaBatalha = new MenuProximaBatalha();
     private Random rand = new Random();

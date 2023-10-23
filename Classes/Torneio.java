@@ -11,12 +11,12 @@ public class Torneio {
         return criaturaSelecionada;
     }
 
-    private void setCriaturaSelecionada(Criatura criaturaSelecionada) {
-        this.criaturaSelecionada = criaturaSelecionada;
+    public void setCriaturaSelecionada(Criatura criaturaSelecionada){
+
     }
     
-    private void defineCriaturaJogador(int criaturaSelecionada) {
-        switch (criaturaSelecionada) {
+    private void defineCriaturaJogador(int selecaoJogador) {
+        switch (selecaoJogador) {
             case 1:
                 criaturaSelecionada = new StoneDev("StoneDev","Terra");
                 break;

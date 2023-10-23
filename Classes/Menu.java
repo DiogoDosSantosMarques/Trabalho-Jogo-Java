@@ -5,6 +5,11 @@ public abstract class Menu {
       private static int opcao;
       private Scanner s = new Scanner(System.in);
 
+      public Menu() {
+        setOpcao(opcao);
+        setS(s);
+    }
+
     public int getOpcao() {
         return opcao;
     }
