@@ -13,18 +13,18 @@ public abstract class Criatura {
     private int ataque;
     private int defesa;
     private int velocidade;
-    private String tipoCriatura;
+    private TipoCriatura tipoCriatura;
 
 
 
-    public Criatura(String nomeCriatura, String tipoCriatura) {
-        this.nomeCriatura = nomeCriatura;
-        this.tipoCriatura = tipoCriatura;
-
-        
+    public Criatura() {
+        setPoder(this.poder);
+        setAtaque(this.ataque);
+        setDefesa(this.defesa);
+        setVelocidade(this.velocidade);
+        setVida(this.vida);
+    }
        
-
-       }
 
 
     // Getters and Setters
@@ -35,6 +35,14 @@ public abstract class Criatura {
 
     public void setNomeCriatura(String nomeCriatura) {
         this.nomeCriatura = nomeCriatura;
+    }
+
+    public TipoCriatura getTipoCriatura() {
+        return tipoCriatura;
+    }
+
+    public void setTipoCriatura(TipoCriatura tipoCriatura) {
+        this.tipoCriatura = tipoCriatura;
     }
 
     public int getVida() {
@@ -77,16 +85,6 @@ public abstract class Criatura {
         this.velocidade = velocidade;
     }
 
-    public String getTipoCriatura() {
-        return tipoCriatura;
-    }
-
-    public void setTipoCriatura(String tipoCriatura) {
-        this.tipoCriatura = tipoCriatura;
-    }
-   
-
-   
 public void ataqueFisico(Criatura inimigo){
         System.out.println("\n" + getNomeCriatura());
         System.out.println("Ataque Físico");

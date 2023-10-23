@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class AtributosBatalha {
-    private Criatura stoneDev = new StoneDev("StoneDev", "Terra");
-    private Criatura waveNerd = new WaveNerd("WaveNerd", "Água");
-    private Criatura burnCoder = new BurnCoder("BurnCoder", "Fogo");
-    private Criatura breezeHacker = new BreezeHacker("BreezeHacker", "Ar");
+    private Criatura stoneDev = new StoneDev();
+    private Criatura waveNerd = new WaveNerd();
+    private Criatura burnCoder = new BurnCoder();
+    private Criatura breezeHacker = new BreezeHacker();
 
     private ArrayList<Criatura> criaturasDisponiveis = new ArrayList<Criatura>();
 
@@ -19,7 +19,7 @@ public class AtributosBatalha {
         criaturasDisponiveis.add(breezeHacker);
 
         for (int i = 0; i < criaturasDisponiveis.size(); i++) {
-            if (criaturasDisponiveis.get(i).getNomeCriatura() == criaturaSelecionada.getNomeCriatura()) {
+            if (criaturasDisponiveis.get(i).getTipoCriatura() == criaturaSelecionada.getTipoCriatura()) {
                 criaturasDisponiveis.remove(i);
             }
         }

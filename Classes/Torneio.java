@@ -1,7 +1,7 @@
 public class Torneio {
-    private Menu comecoJogo = new MenuComecoJogo();
-    private Menu escolhaCriaturas = new MenuEscolhaCriaturas();
-    private Menu menuTorneio = new MenuTorneio();
+    private MenuComecoJogo comecoJogo = new MenuComecoJogo();
+    private MenuEscolhaCriaturas escolhaCriaturas = new MenuEscolhaCriaturas();
+    private MenuTorneio menuTorneio = new MenuTorneio();
     private Batalha batalha = new Batalha();
     private AtributosBatalha atributosBatalha = new AtributosBatalha();
 
@@ -12,22 +12,22 @@ public class Torneio {
     }
 
     public void setCriaturaSelecionada(Criatura criaturaSelecionada){
-
+        this.criaturaSelecionada = criaturaSelecionada;  
     }
     
     private void defineCriaturaJogador(int selecaoJogador) {
         switch (selecaoJogador) {
             case 1:
-                criaturaSelecionada = new StoneDev("StoneDev","Terra");
+                criaturaSelecionada = new StoneDev();
                 break;
             case 2:
-                criaturaSelecionada = new WaveNerd("WaveNerd","Água");
+                criaturaSelecionada = new WaveNerd();
                 break;
             case 3:
-                criaturaSelecionada = new BurnCoder("BurnCoder","Fogo");
+                criaturaSelecionada = new BurnCoder();
                 break;
             case 4:
-                criaturaSelecionada = new BreezeHacker("BreezeHacker","Ar");
+                criaturaSelecionada = new BreezeHacker();
                 break;
         }
     }
@@ -50,7 +50,7 @@ public class Torneio {
                 break;
             default:
                 this.defineCriaturaJogador(escolhaCriaturas.getOpcao());
-                escolhaCriaturas.partesJogo();
+                menuTorneio.partesJogo();
         }
 
         switch (menuTorneio.getOpcao()) {

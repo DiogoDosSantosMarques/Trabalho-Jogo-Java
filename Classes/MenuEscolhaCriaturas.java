@@ -1,7 +1,7 @@
 public class MenuEscolhaCriaturas extends Menu {
 
     @Override
-    public void partesJogo(){
+    public void partesJogo() {
         do {
           
             System.out.println("Escolher Criatura");
@@ -9,7 +9,7 @@ public class MenuEscolhaCriaturas extends Menu {
             System.out.println("2 - WaveNerd - Água");
             System.out.println("3 - BurnCoder - Fogo");
             System.out.println("4 - BreezeHacker - Ár");
-             System.out.println("5 - Sair");
+            System.out.println("5 - Sair");
             
             setOpcao(getS().nextInt());
         } while (getOpcao() > 5 || getOpcao() < 1);
