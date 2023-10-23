@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public abstract class Menu {
     
-      private static int opcao;
+      private int opcao;
       private Scanner s = new Scanner(System.in);
 
       public Menu() {
@@ -15,7 +15,7 @@ public abstract class Menu {
     }
 
     public void setOpcao(int opcao) {
-        Menu.opcao = opcao;
+        this.opcao = opcao;
     }
 
     public Scanner getS() {
@@ -43,4 +43,4 @@ public abstract class Menu {
     
     public abstract void partesJogo();
 
-}    
+}   

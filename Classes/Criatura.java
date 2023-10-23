@@ -5,7 +5,7 @@
  */
 
 
-public class Criatura {
+public abstract class Criatura {
    
     private String nomeCriatura;
     private int vida;
@@ -87,14 +87,15 @@ public class Criatura {
    
 
    
-public void ataqueFisico(Criatura rival){
+public void ataqueFisico(Criatura inimigo){
         System.out.println("\n" + getNomeCriatura());
         System.out.println("Ataque Físico");
 
-        int dano = (getPoder() * getAtaque()) / rival.getDefesa();
+        int dano = (getPoder() * getAtaque()) / inimigo.getDefesa();
 
-        rival.receberDano(dano);
+        inimigo.receberDano(dano);
 
+        posAtaque(dano, inimigo);
     }
 
 
@@ -106,13 +107,13 @@ public void ataqueFisico(Criatura rival){
     }
 
 
-    public void ataqueElemental(Criatura inimigo){
-        
-        
+    public abstract void ataqueElemental(Criatura inimigo);
+
+
+    
+    public void posAtaque(int dano, Criatura inimigo) {
+        System.out.printf("Dano aplicado: %d\n", dano);
+        int vidaInimigo = inimigo.getVida() <= 0 ? 0 : inimigo.getVida();
+        System.out.printf("Vida do inimigo: %d\n", vidaInimigo);
     }
-
-
-    
-    
-    
 }
