@@ -14,7 +14,7 @@ public class Torneio {
     private void setCriaturaSelecionada(Criatura criaturaSelecionada) {
         this.criaturaSelecionada = criaturaSelecionada;
     }
-
+    
     private void defineCriaturaJogador(int criaturaSelecionada) {
         switch (criaturaSelecionada) {
             case 1:
@@ -31,6 +31,7 @@ public class Torneio {
                 break;
         }
     }
+    
 
     public void iniciarJogo() {
         comecoJogo.partesJogo();
@@ -54,8 +55,8 @@ public class Torneio {
 
         switch (menuTorneio.getOpcao()) {
             case 1:
-                atributosBatalha.definecriaturasDisponiveis(criaturaSelecionada);
-                batalha.gameBatalha(atributosBatalha.getcriaturasDisponiveis(), getCriaturaSelecionada(), this);
+                atributosBatalha.defineCriaturasDisponiveis(criaturaSelecionada);
+                batalha.gameBatalha(atributosBatalha.getCriaturasDisponiveis(), getCriaturaSelecionada(), this);
                 break;
             case 2:
                 menuTorneio.sairJogo(this);
